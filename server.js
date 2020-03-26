@@ -16,7 +16,7 @@ const db = require('./config/keys').mongoURI;
 
 //connect to mongodb
 mongoose
-.connect(db, { useFindAndModify: false })
+.connect(db)
 .then(() => console.log('MongDb connected!'))
 .catch(err => console.log(err));
 
@@ -34,5 +34,5 @@ app.use('/api/users', users);
 app.use('/api/profile', profile);
 app.use('/api/posts', posts);
 
-const port = 8020;
+const port = 8070;
 app.listen(port, () => console.log(`Server running on port ${port}`));
