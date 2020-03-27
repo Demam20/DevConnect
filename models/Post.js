@@ -1,71 +1,56 @@
-const mongoose= require('mongoose');
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const PostSchema= new Schema ({
-  user :{ 
+const PostSchema = new Schema({
+  user: {
     type: Schema.Types.ObjectId,
     ref: 'users'
-    //Doaa ref
   },
-  name :{
-    type :String,
-    required:true
-  },
-  avatar:{
-    type:String,
-    required:true
-  },
-  imagepost :{
+  text: {
     type: String,
-    required:true
-    //storing image to the app as url
+    required: true
   },
-  location:{
-    type:String,
-    required:false
+  name: {
+    type: String
   },
-  description:{
-    type:String,
-    required:false
+  avatar: {
+    type: String
   },
-  
-  likes:[{
-    user:{
-      type:Schema.Types.ObjectId,
-      ref:'users'
-      //Doaa ref
+  likes: [
+    {
+      user: {
+        type: Schema.Types.ObjectId,
+        ref: 'users'
+      }
     }
-  }],
-  comments:[{
-    user:{
-      type:Schema.Types.ObjectId,
-      ref:'users'
-    },
-    name:{
-      type:String
-    },
-    avatar:{
-      type:String
-    },
-    text :{
-      type:String,
-      required:true
-    },
-    date:{
-      type:Date,
-      default:Date.now
-
+  ],
+  comments: [
+    {
+      user: {
+        type: Schema.Types.ObjectId,
+        ref: 'users'
+      },
+      text: {
+        type: String,
+        required: true
+      },
+      name: {
+        type: String
+      },
+      avatar: {
+        type: String
+      },
+      date: {
+        type: Date,
+        default: Date.now
+      }
     }
-  }],
-  date:{
-    type:Date,
+  ],
+  date: {
+    type: Date,
     default: Date.now
-  },
-  bookmark:{
-    type:String,
-    required:false
-    
   }
 
 });
-module.exports=Post = mongoose.model('post',PostSchema);
+
+module.exports = Post = mongoose.model('post', PostSchema);

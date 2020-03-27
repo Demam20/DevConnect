@@ -265,6 +265,7 @@ router.delete(
   "/education/:edu_id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
+    let errors = {};
     Profile.findOne({ user: req.user.id })
       .then(profile => {
         // Get remove index
