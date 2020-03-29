@@ -1,11 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
+import navbar from './components/layout/navbar';
+import footer from './components/layout/footer';
+import landing from './components/layout/landing';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <h1>my React app</h1>
+      <navbar/>
+      <landing/>
+      <footer/>
      
     </div>
   );
