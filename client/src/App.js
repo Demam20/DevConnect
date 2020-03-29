@@ -1,7 +1,7 @@
 import React from 'react';
-import navbar from './components/layout/navbar';
-import footer from './components/layout/footer';
-import landing from './components/layout/landing';
+import Navbar from './components/layout/Navbar';
+import Footer from './components/layout/Footer';
+import Landing from './components/layout/Landing';
 import './App.css';
 
 function App() {
