@@ -22,10 +22,7 @@ import calssnames from 'classnames';
        email: this.state.email,
        password: this.state.password
      };
-     axios
-        .post("/api/users/login", user)
-        .then(res => console.log(res.data))
-        .catch(err => this.setState({ errors: err.response.data}));
+     
 
    }
 
