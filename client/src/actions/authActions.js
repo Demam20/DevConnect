@@ -44,3 +44,15 @@ export const registerUser = (userData,history) => dispatch => {
           })
         );
   }
+  //logout user action
+  export const logoutUser = () => dispatch => {
+    //remove from local storage 
+    localStorage.removeItem('jwtToken');
+    //remove from auther header
+    setAuthToken(false);
+    //clean up Redux store
+    dispatch({
+      type:SET_CURRENT_USER,
+      payload:{}
+    })
+  }
