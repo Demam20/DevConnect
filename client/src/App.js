@@ -27,7 +27,7 @@ if (localStorage.jwtToken){
     payload: decoded
 });  
 }
-class App extends Component() {
+class App extends Component {
 
   render(){
   return(  
